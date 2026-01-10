@@ -3,7 +3,6 @@ import time
 import numpy as np
 import pyautogui
 import pygetwindow as gw
-import requests
 
 from modules.board import ChessBorard
 from modules.model import build_model
@@ -12,7 +11,7 @@ from modules.utils import drag_mouse, find_best_steps, convert_dot2pixel
 
 def main():
     chessboard_model = ChessBorard(
-        det_model=build_model(r"D:\workspace\KJTES_OPERATE\weights\best.pth")
+        det_model=build_model("weights/best.pth")
     )
     while True:
         input("请切换到游戏窗口，准备好后按回车继续...")

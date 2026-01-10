@@ -7,9 +7,9 @@ if __name__ == "__main__":
     from pathlib import Path
 
     chessboard_model = ChessBorard(
-        det_model=build_model(r"D:\workspace\KJTES_OPERATE\weights\best.pth")
+        det_model=build_model(r"weights/best.pth")
     )
-    im1 = Path(r"D:\workspace\KJTES_OPERATE\tests\Screenshot_20260110_211941.jpg")
+    im1 = Path(r"tests/Screenshot_20260110_211941.jpg") # 手机游戏屏幕截图
     demo1image = iio.imread(im1)
     chessboard, positions = chessboard_model.recognize_chessboard(demo1image)
     rects = find_best_steps(chessboard.tolist()).get("rects", [])
