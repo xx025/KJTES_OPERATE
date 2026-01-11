@@ -124,6 +124,30 @@ wheels = [
 ]
 
 [[package]]
+name = "distinctipy"
+version = "1.3.4"
+source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/8c/3c/e0b90a5bc396e2abaf207d9a41ea8aeab1f41760425262474903bade6a7b/distinctipy-1.3.4.tar.gz", hash = "sha256:fed97afff1afb73ecaa87c85461021f0ba89fae63067c0125b9673526510aac4", size = 29711, upload-time = "2024-01-10T21:32:24.032Z" }
+wheels = [
+    { url = "https://pypi.tuna.tsinghua.edu.cn/packages/0a/75/fa882538bdb0c8fc4459f1595a761591b827691936d57c08c492676f19bc/distinctipy-1.3.4-py3-none-any.whl", hash = "sha256:2bf57d9d20dbc5c2fd462298573cc963c037f493d04ec61e94cb8d0bf5023c74", size = 26743, upload-time = "2024-01-10T21:32:22.351Z" },
+]
+
+[[package]]
+name = "easyfont"
+version = "0.0.1.post10"
+source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
+dependencies = [
+    { name = "importlib-resources" },
+]
+sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/57/63/b992c57b67400d8d9720ff19b85f29b2a315b2e245e04f0549417398a189/easyfont-0.0.1.post10.tar.gz", hash = "sha256:32ba9eb02f1c515ff94bba8642bce033acc29130c7362f741ba489163760ae69", size = 10837921, upload-time = "2025-06-07T19:05:51.603Z" }
+wheels = [
+    { url = "https://pypi.tuna.tsinghua.edu.cn/packages/38/8d/6aab4701bbc7cac28004e5ad387fc62e87a8f87753ccf061e907ad057730/easyfont-0.0.1.post10-py3-none-any.whl", hash = "sha256:b126d82a1d69115febc2e29250faae3b56a6e409e8d5d923274e4471aa101cd2", size = 10864293, upload-time = "2025-06-07T19:05:48.573Z" },
+]
+
+[[package]]
 name = "filelock"
 version = "3.20.3"
 source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
@@ -164,6 +188,15 @@ wheels = [
 ]
 
 [[package]]
+name = "importlib-resources"
+version = "6.5.2"
+source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
+sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/cf/8c/f834fbf984f691b4f7ff60f50b514cc3de5cc08abfc3295564dd89c5e2e7/importlib_resources-6.5.2.tar.gz", hash = "sha256:185f87adef5bcc288449d98fb4fba07cea78bc036455dd44c5fc4a2fe78fed2c", size = 44693, upload-time = "2025-01-03T18:51:56.698Z" }
+wheels = [
+    { url = "https://pypi.tuna.tsinghua.edu.cn/packages/a4/ed/1f1afb2e9e7f38a545d628f864d562a5ae64fe6f7a10e28ffb9b185b4e89/importlib_resources-6.5.2-py3-none-any.whl", hash = "sha256:789cfdc3ed28c78b67a06acb8126751ced69a3d5f79c095a98298cd8a760ccec", size = 37461, upload-time = "2025-01-03T18:51:54.306Z" },
+]
+
+[[package]]
 name = "jinja2"
 version = "3.1.6"
 source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
@@ -195,6 +228,7 @@ dependencies = [
     { name = "pip" },
     { name = "pqdm" },
     { name = "pyautogui" },
+    { name = "pycvt" },
     { name = "requests" },
     { name = "scikit-learn", version = "1.7.2", source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }, marker = "python_full_version < '3.11'" },
     { name = "scikit-learn", version = "1.8.0", source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }, marker = "python_full_version >= '3.11'" },
@@ -210,6 +244,7 @@ requires-dist = [
     { name = "pip", specifier = ">=25.2" },
     { name = "pqdm", specifier = ">=0.2.0" },
     { name = "pyautogui", specifier = ">=0.9.54" },
+    { name = "pycvt", specifier = ">=0.0.1.post202601010003" },
     { name = "requests", specifier = ">=2.32.3" },
     { name = "scikit-learn", specifier = ">=1.7.2" },
     { name = "torch", specifier = ">=2.9.1" },
@@ -695,6 +730,19 @@ dependencies = [
     { name = "pytweening" },
 ]
 sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/65/ff/cdae0a8c2118a0de74b6cf4cbcdcaf8fd25857e6c3f205ce4b1794b27814/PyAutoGUI-0.9.54.tar.gz", hash = "sha256:dd1d29e8fd118941cb193f74df57e5c6ff8e9253b99c7b04f39cfc69f3ae04b2" }
+
+[[package]]
+name = "pycvt"
+version = "0.0.1.post202601010003"
+source = { registry = "https://pypi.tuna.tsinghua.edu.cn/simple" }
+dependencies = [
+    { name = "distinctipy" },
+    { name = "easyfont" },
+]
+sdist = { url = "https://pypi.tuna.tsinghua.edu.cn/packages/ef/90/40c2f598b6ba324bc5ac1bbdf078d5aa5f6c11eac1f25d0367dfe0e053d5/pycvt-0.0.1.post202601010003.tar.gz", hash = "sha256:d90393e15197486fd2d31da11b07b74a10fe28a621a8e304dbb7ea504d175498", size = 12703, upload-time = "2026-01-02T15:20:59.366Z" }
+wheels = [
+    { url = "https://pypi.tuna.tsinghua.edu.cn/packages/e0/a9/0dc68677a82deb798d178a696456de86033785302f78ec15f927259cf7ac/pycvt-0.0.1.post202601010003-py3-none-any.whl", hash = "sha256:daf0ff858e642dd7f1c6735ff3ae5064c56edefa2cd5f99604bb1bb8d6259dcd", size = 14223, upload-time = "2026-01-02T15:20:58.146Z" },
+]
 
 [[package]]
 name = "pygetwindow"
