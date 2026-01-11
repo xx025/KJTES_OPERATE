@@ -12,3 +12,4 @@ wheels/
 tests/Screenshot_20260110_211941.jpg
 .idea/
 ocr_result.png
+runs/
