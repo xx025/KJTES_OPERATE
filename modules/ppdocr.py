@@ -82,7 +82,8 @@ def ocr_recognition(image_input, api_url: str = "http://127.0.0.1:8080/ocr") -> 
         payload = {
             "file": b64,
             "fileType": 1,
-            "visualize": False
+            "visualize": False,
+            "useDocUnwarping": False
         }
         resp = requests.post(api_url, json=payload, timeout=30)
         if resp.status_code != 200:

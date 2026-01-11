@@ -105,6 +105,13 @@ class OCRClicker:
         return hits
 
     # -------- core API --------
+    def __contains__(self, item: str) -> bool:
+        hits = self._ocr_hits()
+        for text, _, _ in hits:
+            if item in text:
+                return True
+        return False
+
     def click(
         self,
         target: Union[str, Sequence[str], Point],
@@ -156,10 +163,11 @@ class OCRClicker:
             (w.left, w.top, w.width, w.height)
         """
         return self._region()
-
-    
     @property
     def window_im(self) -> Any:
         left, top, w, h = self._region()
         img = pyautogui.screenshot(region=(left, top, w, h))
         return img
+    
+    
+    

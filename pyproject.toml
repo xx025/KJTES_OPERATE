@@ -11,6 +11,7 @@ dependencies = [
     "pip>=25.2",
     "pqdm>=0.2.0",
     "pyautogui>=0.9.54",
+    "pycvt>=0.0.1.post202601010003",
     "requests>=2.32.3",
     "scikit-learn>=1.7.2",
     "torch>=2.9.1",
