@@ -43,7 +43,7 @@ def play_game(bot, chessboard_model, save_board_dir):
 
     print("棋盘分析完成，开始寻找路径...")
     results = find_best_steps(
-        chessboard.tolist(), max_times=45, url="http://10.8.0.3:9080/search"
+        chessboard.tolist(), max_times=45, url="http://10.8.0.3:8098/search"
     )
     print("路径寻找结果：", json.dumps(results, ensure_ascii=False, indent=4))
 
@@ -87,29 +87,40 @@ def main():
         )
         try:
             
-            if "无限挑战次数" in bot:
-                print("检测到无限挑战次数，开始点击无限挑战次数...")
-                bot.click(["无限挑战次数"], timeout=5, mode="contains")
-                time.sleep(5)
+            
+        
+
+            
+            if "脑细胞不足" in bot or "获得" in bot:
+                print("位于弹窗页面，无法正常开始游戏，开始点击谢谢...")
+                bot.click("谢谢", timeout=5, mode="contains")
+                bot.click("返回主界面", timeout=5, mode="contains")
+                print("返回主界面...")
+                if "领取" in bot or "好吧" in bot or "确定" in bot:
+                    print("检测到领取，开始点击领取...")
+                    bot.click(["领取","好吧","确定"])
+                continue
+                
+            if "无限挑战" in bot and "开始游戏" in bot:
+                print("位于主页面，开始点击无限挑战...")
+                bot.click(["无限挑战"], timeout=5, mode="contains")
                 no_ad(bot)
+                time.sleep(10)
+        
                 
             if "再次挑战" in bot or "再来一局" in bot or "开始游戏" in bot:
                 print("检测到再来一局，开始下一轮操作...")
                 bot.click(["再来一局", "再次挑战","开始游戏"], timeout=5)
                 time.sleep(5)
-                play_game(bot, chessboard_model, save_board_dir)
-                continue
-            if "确定" in bot:
-                print("检测到确定，开始点击确定...")
-                bot.click(["确定"], timeout=5)
-            if "领取" in bot:
+                if "当前智商" in bot:
+                    print("检测到游戏进行中，开始执行游戏操作...")
+                    play_game(bot, chessboard_model, save_board_dir)
+                    print("本轮游戏操作完成，等待下一轮...")
+
+            if "领取" in bot or "好吧" in bot or "确定" in bot:
                 print("检测到领取，开始点击领取...")
-                bot.click(["领取"], timeout=5)
-            if "脑细胞不足" in bot:
-                print("检测到脑细胞不足，需要获取时间")
-                bot.click("谢谢", timeout=5, mode="contains")
-                print("返回主界面...")
-                bot.click("返回主界面", timeout=5, mode="contains")
+                bot.click(["领取","好吧","确定"], timeout=5)
+
 
         except Exception as e:
             print(f"出现错误: {e}")
